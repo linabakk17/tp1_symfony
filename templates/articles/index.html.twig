@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Articles — TP1 Symfony 7.4{% endblock %}
+
+{% block body %}
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1 class="mb-0">Liste des articles</h1>
+        <span class="badge bg-primary fs-6">Total : {{ articles|length }}</span>
+    </div>
+
+    {% for article in articles %}
+        <div class="card mb-3 shadow-sm">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-start">
+                    <h2 class="h5 card-title mb-2">
+                        #{{ loop.index }} — {{ article.titre }}
+                    </h2>
+                    {% if article.publie %}
+                        <span class="badge bg-success">Publié</span>
+                    {% else %}
+                        <span class="badge bg-secondary">Brouillon</span>
+                    {% endif %}
+                </div>
+                <p class="card-text mb-0">{{ article.contenu }}</p>
+            </div>
+        </div>
+    {% else %}
+        <div class="alert alert-info">Aucun article disponible pour le moment.</div>
+    {% endfor %}
+{% endblock %}
