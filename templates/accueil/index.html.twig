@@ -1,11 +1,8 @@
 {% extends 'base.html.twig' %}
-
-{% block title %}Accueil — TP1 Symfony 7.4{% endblock %}
+{% block title %}Accueil{% endblock %}
 
 {% block body %}
-    <div class="p-4 bg-white border rounded shadow-sm">
-        <h1 class="mb-3">Bienvenue sur {{ controller_name }} !</h1>
-        <p class="lead">Bienvenue dans notre application Symfony 7.4 avec Twig et Bootstrap 5.3.3.</p>
-        <p class="text-muted mb-0">Date d'aujourd'hui : <strong>{{ "now"|date("d/m/Y") }}</strong></p>
-    </div>
+<h1>Bienvenue sur notre application Symfony !</h1>
+<p>Ceci est votre première application construite avec le framework <strong>Symfony 7.4</strong>.</p>
+<p>Date actuelle : {{ "now"|date("d/m/Y H:i") }}</p>
 {% endblock %}
